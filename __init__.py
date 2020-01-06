@@ -1,10 +1,9 @@
 # -*- coding:utf-8 -*-
 import inspect
 import functools
-from abc import abstractmethod, ABCMeta
 
 
-class State(metaclass=ABCMeta):
+class State(object):
     @staticmethod
     def __begin__(host):
         pass
