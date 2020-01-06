@@ -13,18 +13,25 @@ Thanks to the dynamic nature of the Python language, the Python implementation o
 1. For example, a person's daily life is different on weekdays and Sundays.
 ```
 def workday():
-    print ' work hard!'
+    print('work hard!')
+
+
 def weekend():
-    print ' play harder!'
+    print('play harder!')
+
+
 class People(object):
-    pass people=People()
+    pass
+    people = People()
+
+
 while True:
-    for 1 in xrange(1,8):
-        if i==6:
-            people.day=weekend
-        if i==1:
-            people.day=workday
-        people. day()
+    for 1 in range(1, 8):
+        if i == 6:
+            people.day = weekend
+        if i == 1:
+            people.day = workday
+        people.day()
 ```
 2.Running the above code, the output is as follows:
 ```
@@ -40,26 +47,31 @@ play harder!
 3.In this way, the state pattern is achieved by replacing the instance methods (that is, behaviors) under different conditions.
 ```
 from state2 import State, stateful, behavior, switch
-@stateful
-class People (object):
-    class workday (State):
-        default=True 
-        @behavior 
-        def day(aelf):
-            print ' work hard.'
-    class weekend(State): 
-        @behavior  
-        def day(self): 
-            print ' play harder!'
 
-people=People()
-while True:.·
-    for i in range(1,8): 
-        if i == 6: 
-            switch (people, People. Weekend)
-        if i == 1: 
-            switch (people, People. Workday)
-        people. day()
+
+@stateful
+class People(object):
+    class workday(State):
+        default = True
+
+        @behavior
+        def day(aelf):
+            print('work hard.')
+
+    class weekend(State):
+        @behavior
+        def day(self):
+            print('play harder!')
+
+
+people = People()
+while True:
+    for i in range(1, 8):
+        if i == 6:
+            switch(people, People.Weekend)
+        if i == 1:
+            switch(people, People.Workday)
+        people.day()
 ```
 
 * how about it? Does it feel longer than the code before applying the pattern? This is because the example is too simple. I will show you more examples closer to real business needs later. Now let's press this table and look at people.day0 in the last row. People is an instance of People, but People does not define the day0 method? In order to resolve this doubt, we need to look at it from the beginning.
