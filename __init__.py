@@ -45,7 +45,7 @@ def stateful(cls):
         except AttributeError as e:
             raise e
         if not callable(f):
-            raise e
+            raise Exception("{0} must be callable.".format(name))
         return functools.partial(f, self)
 
     cls.__init__ = __init__
