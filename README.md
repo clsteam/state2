@@ -22,7 +22,8 @@ def weekend():
 
 class People(object):
     pass
-    people = People()
+
+people = People()
 
 
 while True:
@@ -65,6 +66,7 @@ class People(object):
 
 
 people = People()
+
 while True:
     for i in range(1, 8):
         if i == 6:
